@@ -83,7 +83,7 @@ export const Editor: React.FC<Props> = (props) => {
           value={text}
         />
         <Preview>
-          <div dangerouslySetInnerHTML={{ __html: html }}>{text}</div>
+          <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </Preview>
       </Wrapper>
       {showModal && (

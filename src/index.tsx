@@ -1,6 +1,5 @@
 import * as React from "react";
 import { render } from "react-dom";
-import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 import {
   HashRouter as Router,
@@ -18,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const StorageKey = "./editor:text";
+const StorageKey = "/editor:text";
 
 const Main: React.FC = () => {
   const [text, setText] = useStateWithStorage("", StorageKey);
@@ -27,7 +26,7 @@ const Main: React.FC = () => {
     <>
       <GlobalStyle />
       <Router>
-        <switch>
+        <Switch>
           <Route exact path="/editor">
             <Editor text={text} setText={setText} />
           </Route>
@@ -35,7 +34,7 @@ const Main: React.FC = () => {
             <History setText={setText} />
           </Route>
           <Redirect to="/editor" path="*" />
-        </switch>
+        </Switch>
       </Router>
     </>
   );
