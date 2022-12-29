@@ -22,6 +22,5 @@ const networkFallingBackToCache = async (request) => {
 };
 
 self.addEventListener("fetch", (event) => {
-  console("fetch start");
   event.respondWith(networkFallingBackToCache(event.request));
 });
